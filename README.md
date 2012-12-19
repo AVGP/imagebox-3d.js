@@ -13,6 +13,7 @@ You will find two phrases throughout this documentation:
 ## How to use
 
 To use imagebox-3d, you need to do the following:
+
 1. Load the js/imagebox-3d.js along with jQuery
 2. Load the csS/imagebox-3d.js stylesheet
 3. Call imagebox3D(<selector>,<delay for start state>) and you're done.
