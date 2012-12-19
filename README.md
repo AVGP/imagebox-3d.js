@@ -2,6 +2,7 @@ imagebox-3d.js
 ==============
 
 Allows you to create a "showcase" or "lightbox" with 3D animations using CSS3 and JavaScript.
+Checkout these [live demo](https://c9.io/avgp/imagebox-3d_js/workspace/examples/flickr.html).
 
 ## Terminology
 
@@ -16,7 +17,7 @@ To use imagebox-3d, you need to do the following:
 
 1. Load the js/imagebox-3d.js along with jQuery
 2. Load the csS/imagebox-3d.js stylesheet
-3. Call imagebox3D(*selector*, *delay for start state*) and you're done.
+3. Call imagebox3D( *selector*, *delay for start state*) and you're done.
 
 You can use any valid jQuery selector. The delay is the number of milliseconds it stays in the START state.  
 Checkout the simple.html in the examples folder for a basic demo.
