@@ -2,7 +2,7 @@ imagebox-3d.js
 ==============
 
 Allows you to create a "showcase" or "lightbox" with 3D animations using CSS3 and JavaScript.
-Checkout these [live demo](https://c9.io/avgp/imagebox-3d_js/workspace/examples/flickr.html).
+Checkout this [live demo](https://c9.io/avgp/imagebox-3d_js/workspace/examples/flickr.html).
 
 ## Terminology
 
