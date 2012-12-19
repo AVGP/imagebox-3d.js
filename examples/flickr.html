@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/imagebox-3d.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/imagebox-3d.css">
+    </head>
+    <body>
+        <div style="border: 1px solid #ddd; float:left; width: 150px; minimum-height:20px; margin-right: 20px;">
+            Title: <span id="title">Loading...</span>
+        </div>
+        <div id="box" style="height:200px; width: 200px; background: #f00; float: left;">
+            <span>Loading pictures - please wait</span>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var imgs = [];
+                
+                function pickRandomImage(imgBoxElem) {
+                    if(imgs.length === 0) return;
+                    var pick = ~~(Math.random() * imgs.length);
+                    imgBoxElem.html(imgs[pick].img);
+                    $("#title").fadeOut("fast", function(e) { $(this).text(imgs[pick].title) });
+                }
+                
+                function mkImagebox3D() {
+                    imagebox3D(
+                        "#box",                                         // Selector for the elements to be turned to an imagebox3D
+                        5000,                                           // "Shown" state will be kept for this amount of milliseconds
+                           0,                                           // "Hidden" state will be kept for this amount of milliseconds
+                        pickRandomImage,                                // Callback function when reached HIDDEN state
+                        function(elem) { $("#title").fadeIn("fast"); }  // Callback function when reached SHOWN state 
+                    );
+                }
+                
+                $.getJSON(
+                    "http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=cc9c0190bd98ebcf164a77bfbf6832cf&license=7&format=json&nojsoncallback=1&api_sig=ada2e15053887ca406e456f4cbeb8905", 
+                    function(response) {
+                        for(var i=0,len = response.photos.photo.length; i<len; i++) {
+                            var photo = response.photos.photo[i];
+                            var t_url = "http://farm" + photo.farm + ".static.flickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + "_" + "t.jpg";
+                            setTimeout(function(obj) {
+                                var img = { img: new Image(), title: obj.title };
+                                img.img.src = obj.url;
+                                img.img.style.height = "100%";
+                                img.img.style.width = "100%";
+                                imgs.push(img);
+                            }, 0, { url: t_url, title: photo.title }); //Make this async
+                        }
+                        mkImagebox3D();
+                    }
+                );
+            });
+        </script>
+    </body>
+</html>

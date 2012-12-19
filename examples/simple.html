@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/imagebox-3d.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/imagebox-3d.css">
+    </head>
+    <body>
+        <div class="box" style="height:200px; width: 200px; background: #f00;"></div>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                imagebox3D(
+                    ".box",                                      //Selector for the elements to be turned to an imagebox3D
+                    5000,                                        //"Show" state will be kept for this amount of milliseconds
+                    function(elem) { console.log("HIDDEN"); },   //Callback function when reached HIDDEN state
+                    function(elem) { console.log("SHOWN")} );    //Callback function when reached SHOWN state
+            });
+        </script>
+    </body>
+</html>
