@@ -1,0 +1,57 @@
+/** DON'T TOUCH THOSE - scroll down! **/
+
+/* Mixin definitions */
+
+@mixin transform($value) {
+  @each $prefix in -moz- -webkit- "" {
+    #{$prefix}transform: $value;
+  } 
+}
+
+@mixin keyframes($name) {
+    @keyframes #{$name} {
+        @content
+    }
+
+    @-moz-keyframes #{$name} {
+        @content
+    }
+
+    @-webkit-keyframes #{$name} {
+        @content
+    }
+
+}
+
+@mixin animation($name, $duration, $ease) {
+  @each $prefix in -moz- -webkit- "" {
+    #{$prefix}animation: $name $duration;
+    #{$prefix}animation-timing-function: $ease;
+    #{$prefix}animation-play-state: paused;
+  }     
+}
+
+
+/** 
+*
+* CHANGE THINGS BELOW 
+*
+**/
+
+/* Define your animation here */
+
+@include keyframes(bringIn) {
+    from { @include transform(rotateY(90deg)); }
+    to { @include transform(rotateY(0deg)); }
+}
+
+@include keyframes(bringOut) {
+    from { @include transform(rotateY(0deg)); }
+    to { @include transform(rotateY(90deg)); }
+}
+
+.imgbox3d_box {
+    @include animation(bringIn, 3s, ease-in);
+}
+
+
