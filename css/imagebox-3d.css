@@ -1,48 +1,84 @@
-/** Webkit **/
-@-webkit-keyframes bringOut {
-    from { -webkit-transform: rotateX(0deg); }
-    to { -webkit-transform: rotateX(90deg); }
-}
+/** DON'T TOUCH THOSE - scroll down! **/
+/* Mixin definitions */
+/** 
+*
+* CHANGE THINGS BELOW 
+*
+**/
+/* Define your animation here */
+@keyframes bringIn {
+  from {
+    -moz-transform: rotateY(90deg);
+    -webkit-transform: rotateY(90deg);
+    transform: rotateY(90deg); }
 
-@-webkit-keyframes bringIn {
-    from { -webkit-transform: rotateX(90deg); }
-    to { -webkit-transform: rotateX(0deg); }
-}
-
-/** Mozilla **/
-
-@-moz-keyframes bringOut {
-    from { -moz-transform: rotateX(0deg); }
-    to { -moz-transform: rotateX(90deg); }
-}
+  to {
+    -moz-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg); } }
 
 @-moz-keyframes bringIn {
-    from { -moz-transform: rotateX(90deg); }
-    to { -moz-transform: rotateX(0deg); }
-}
+  from {
+    -moz-transform: rotateY(90deg);
+    -webkit-transform: rotateY(90deg);
+    transform: rotateY(90deg); }
 
-/** W3C standard **/
+  to {
+    -moz-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg); } }
+
+@-webkit-keyframes bringIn {
+  from {
+    -moz-transform: rotateY(90deg);
+    -webkit-transform: rotateY(90deg);
+    transform: rotateY(90deg); }
+
+  to {
+    -moz-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg); } }
 
 @keyframes bringOut {
-    from { transform: rotateX(0deg); }
-    to { transform: rotateX(90deg); }
-}
+  from {
+    -moz-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg); }
 
-@keyframes bringIn {
-    from { transform: rotateX(90deg); }
-    to { transform: rotateX(0deg); }
-}
+  to {
+    -moz-transform: rotateY(90deg);
+    -webkit-transform: rotateY(90deg);
+    transform: rotateY(90deg); } }
+
+@-moz-keyframes bringOut {
+  from {
+    -moz-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg); }
+
+  to {
+    -moz-transform: rotateY(90deg);
+    -webkit-transform: rotateY(90deg);
+    transform: rotateY(90deg); } }
+
+@-webkit-keyframes bringOut {
+  from {
+    -moz-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg); }
+
+  to {
+    -moz-transform: rotateY(90deg);
+    -webkit-transform: rotateY(90deg);
+    transform: rotateY(90deg); } }
 
 .imgbox3d_box {
-    -webkit-animation: bringIn 2s;
-    -webkit-animation-timing-function: ease-in;
-    -webkit-animation-play-state: paused;
-        
-    -moz-animation: bringIn 2s;
-    -moz-animation-timing-function: ease-in;
-    -moz-animation-play-state: paused;
-    
-    animation: bringIn 2s;
-    animation-timing-function: ease-in;
-    animation-play-state: paused;
-}
+  -moz-animation: bringIn 3s;
+  -moz-animation-timing-function: ease-in;
+  -moz-animation-play-state: paused;
+  -webkit-animation: bringIn 3s;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-play-state: paused;
+  animation: bringIn 3s;
+  animation-timing-function: ease-in;
+  animation-play-state: paused; }
