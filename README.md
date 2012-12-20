@@ -31,6 +31,17 @@ You can, of course, also change the animations by modifying the imagebox-3d.css 
 
 See the flickr.html example for a more advanced application with imagebox3D.
 
+## Preferred method for changes to the CSS
+
+To make thing easier and save you from the prefix hell, I included an [SCSS](http://sass-lang.com/) file.
+It makes it much easier to change the animation keyframes and the animation behaviour.  
+Just scroll down below the "CHANGE THINGS BELOW" comment and edit the properties - et voila: Custom behavior.
+After making the changes, you need to compile the file:  
+
+    $ gem install sass
+    $ sass scss/imagebox-3d.scss:css/imagebox-3d.css
+    
+Done!
 
 ## License
 
